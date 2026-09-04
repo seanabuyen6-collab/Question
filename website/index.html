@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>A little question for you</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="page-shell">
+            <div class="question-mark mark-one" aria-hidden="true">?</div>
+            <div class="question-mark mark-two" aria-hidden="true">?</div>
+            <div class="question-mark mark-three" aria-hidden="true">?</div>
+
+            <section class="question-card" aria-labelledby="page-title">
+                <p class="eyebrow">A tiny mystery</p>
+                <h1 id="page-title">Why are you not talking to me?</h1>
+                <p class="intro" id="intro-text">Send your question. He can open this page and reply to you live.</p>
+
+                <form id="question-form">
+                    <label for="question-input">Your question</label>
+                    <div class="input-row">
+                        <input id="question-input" name="question" type="text" maxlength="120" placeholder="Why have you been quiet?" autocomplete="off" required />
+                        <button type="submit">Send question <span aria-hidden="true">↗</span></button>
+                    </div>
+                </form>
+
+                <form id="answer-form" hidden>
+                    <label for="answer-input">Reply to the question</label>
+                    <div class="input-row">
+                        <textarea id="answer-input" maxlength="500" placeholder="Type your honest answer..." required></textarea>
+                        <button type="submit">Send reply <span aria-hidden="true">↗</span></button>
+                    </div>
+                </form>
+
+                <div class="answer-panel" id="answer-panel" aria-live="polite" hidden>
+                    <span class="answer-label" id="panel-label">Live response</span>
+                    <p id="submitted-question"></p>
+                    <p class="answer-text" id="answer-text">Waiting for his reply...</p>
+                </div>
+
+                <p class="note" id="connection-status">Connecting to the live room...</p>
+            </section>
+        </main>
+        <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
